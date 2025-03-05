@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<header>
+    <img src="images/logo.png">
+</header>
+
+
+<form action="page_3.html">
+
+    <select name="Start">
+        <option value="Start">Start</option>
+        <option value="Gudhjem">Gudhjem</option>
+        <option value="Nexø">Nexø</option>
+        <option value="Svanneke">Svanneke</option>
+        <option value="Allinge">Allinge</option>
+        <option value="Tejn">Tejn</option>
+        <option value="Rønne">Rønne</option>
+    </select>
+
+    <br/>
+
+    <select name="Destination">
+        <option value="Destination">Destination</option>
+        <option value="Gudhjem">Gudhjem</option>
+        <option value="Nexø">Nexø</option>
+        <option value="Svanneke">Svanneke</option>
+        <option value="Allinge">Allinge</option>
+        <option value="Tejn">Tejn</option>
+        <option value="Rønne">Rønne</option>
+    </select>
+
+    <br/>
+
+    <label for="dato">Vælg en dato:</label>
+    <input type="date" id="dato" style="display: none;">
+    <button onclick="åbnKalender()">Vælg dato</button>
+
+    <p id="valgt-dato"></p>
+
+    <script>
+        function åbnKalender() {
+            let dateInput = document.getElementById("dato");
+            dateInput.style.display = "block"; // Vis input-feltet
+            dateInput.focus(); // Åbn kalenderen
+            dateInput.addEventListener("change", function () {
+                document.getElementById("valgt-dato").innerText = "Du har valgt: " + dateInput.value;
+                dateInput.style.display = "none"; // Skjul feltet igen efter valg
+            });
+        }
+    </script>
+
+    <label for="Tidspunkt">Tidspunkt:</label>
+    <input type="text" id="Tidspunkt" name="Tidspunkt" value=""> <br/>
+
+
+    <button type="Book">Book</button>
+</form>
+
+
 </body>
 </html>
